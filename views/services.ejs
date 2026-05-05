@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Our Services</span>
+        <h1><%= heroTitle %></h1>
+        <p><%= pageDescription %></p>
+      </div>
+    </section>
+
+    <section class="services">
+      <h2 class="section-title"><%= sectionTitle %></h2>
+      <p>AgriLinkHub combines processing, market connections, transport, aggregation, and local partnership services in one ecosystem to help farmers, buyers, and communities grow together.</p>
+
+      <div class="services-grid">
+        <% services.forEach(function(service) { %>
+          <article class="service">
+            <h3><%= service.title %></h3>
+            <p><%= service.description %></p>
+          </article>
+        <% }); %>
+      </div>
+    </section>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>
